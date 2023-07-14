@@ -3,5 +3,5 @@ export type NavbarLogoProps = {
 };
 
 export function NavbarLogo({ children }: NavbarLogoProps) {
-  return <div className='my-2 mx-4'>{children}</div>;
+  return <div className='m-4'>{children}</div>;
 }

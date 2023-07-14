@@ -1,0 +1,26 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model NotificationSubscriptionKey {
+  id            Int                       @id       @default(autoincrement())
+  p256dh        String
+  auth          String
+  subscription  NotificationSubscription?
+}
+
+model NotificationSubscription {
+  id              Int                           @id       @default(autoincrement())
+  endpoint        String
+  expirationTime  String?
+  keys            NotificationSubscriptionKey   @relation(fields: [keyId], references: [id])
+  keyId           Int                           @unique
+}

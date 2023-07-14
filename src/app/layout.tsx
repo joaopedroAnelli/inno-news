@@ -6,6 +6,9 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import ApolloProvider from '@/components/ApolloProvider';
 import Link from 'next/link';
+import registerServiceWorker from '@/scripts/registerServiceWorker';
+
+registerServiceWorker();
 
 const inter = Inter({ subsets: ['latin'] });
 
