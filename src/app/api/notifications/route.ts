@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import WebPush from 'web-push';
 
 WebPush.setVapidDetails(
-  'https://localhost:3000',
+  process.env.APP_DOMAIN || '',
   process.env.VAPID_PUBLIC_KEY || '',
   process.env.VAPID_PRIVATE_KEY || ''
 );

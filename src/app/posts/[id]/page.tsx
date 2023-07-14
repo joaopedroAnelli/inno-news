@@ -14,7 +14,7 @@ export default function PostPage({ params }: { params: { id: string } }) {
   return (
     <div className='flex flex-col items-center bg-slate-100 w-full h-full'>
       <Image
-        src={data?.post.coverImage?.url}
+        src={data?.post?.coverImage?.url || ''}
         alt='Imagem da Notícia'
         objectFit='cover'
         className='rounded-md mb-8'
@@ -26,7 +26,7 @@ export default function PostPage({ params }: { params: { id: string } }) {
         <h1 className='text-2xl mb-4'>{data?.post?.title}</h1>
 
         <div
-          dangerouslySetInnerHTML={{ __html: data?.post?.content.html }}
+          dangerouslySetInnerHTML={{ __html: data?.post?.content.html || '' }}
         ></div>
       </div>
     </div>

@@ -6,9 +6,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import ApolloProvider from '@/components/ApolloProvider';
 import Link from 'next/link';
-import registerServiceWorker from '@/scripts/registerServiceWorker';
-
-registerServiceWorker();
+import ServiceWorker from '@/components/ServiceWorker';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -25,6 +23,7 @@ export default function RootLayout({
   return (
     <html lang='pt-br'>
       <body className={inter.className}>
+        <ServiceWorker />
         <ApolloProvider>
           <Navbar.Root>
             <Navbar.Logo>

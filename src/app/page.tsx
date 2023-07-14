@@ -13,7 +13,10 @@ export default function Home() {
     <main className='bg-slate-100 flex justify-center h-full flex-col items-center'>
       {data?.posts.map((post) => (
         <NewsCard.Root key={post.id}>
-          <NewsCard.Cover src={post.coverImage?.url} alt='Imagem da Notícia' />
+          <NewsCard.Cover
+            src={post.coverImage?.url || ''}
+            alt='Imagem da Notícia'
+          />
           <NewsCard.Content>
             <NewsCard.Title>{post.title}</NewsCard.Title>
             <NewsCard.Excerpt>{post.excerpt}</NewsCard.Excerpt>
