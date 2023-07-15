@@ -2,7 +2,7 @@
 import { useQuery } from '@apollo/client';
 
 import getPosts from '@/graphql/queries/getPosts';
-import NewsCard from '@/components/NewsCard';
+import PostCard from '@/components/PostCard';
 
 export default function Home() {
   const { loading, data } = useQuery(getPosts);
@@ -12,17 +12,17 @@ export default function Home() {
   return (
     <main className='bg-slate-100 flex justify-center h-full flex-col items-center'>
       {data?.posts.map((post) => (
-        <NewsCard.Root key={post.id}>
-          <NewsCard.Cover
+        <PostCard.Root key={post.id}>
+          <PostCard.Cover
             src={post.coverImage?.url || ''}
             alt='Imagem da Notícia'
           />
-          <NewsCard.Content>
-            <NewsCard.Title>{post.title}</NewsCard.Title>
-            <NewsCard.Excerpt>{post.excerpt}</NewsCard.Excerpt>
-            <NewsCard.CTA href={`/posts/${post.id}`}>Ver Artigo</NewsCard.CTA>
-          </NewsCard.Content>
-        </NewsCard.Root>
+          <PostCard.Content>
+            <PostCard.Title>{post.title}</PostCard.Title>
+            <PostCard.Excerpt>{post.excerpt}</PostCard.Excerpt>
+            <PostCard.CTA href={`/posts/${post.id}`}>Ver Artigo</PostCard.CTA>
+          </PostCard.Content>
+        </PostCard.Root>
       ))}
     </main>
   );

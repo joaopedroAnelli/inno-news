@@ -1,10 +1,10 @@
 import Link, { LinkProps } from 'next/link';
 
-export type NewsCardCTAProps = LinkProps & {
+export type PostCardCTAProps = LinkProps & {
   children: React.ReactNode;
 };
 
-export function NewsCardCTA({ children, ...rest }: NewsCardCTAProps) {
+export function PostCardCTA({ children, ...rest }: PostCardCTAProps) {
   return (
     <div className='flex justify-end'>
       <Link

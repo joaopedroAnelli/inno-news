@@ -1,8 +1,8 @@
 import Image, { ImageProps } from 'next/image';
 
-export type NewsCardCoverProps = ImageProps & {};
+export type PostCardCoverProps = ImageProps & {};
 
-export function NewsCardCover({ alt, src, ...props }: NewsCardCoverProps) {
+export function PostCardCover({ alt, src, ...props }: PostCardCoverProps) {
   return (
     <Image
       alt={alt}

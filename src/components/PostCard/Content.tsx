@@ -1,7 +1,7 @@
-export type NewsCardContent = {
+export type PostCardContent = {
   children: React.ReactNode;
 };
 
-export function NewsCardContent({ children }: NewsCardContent) {
+export function PostCardContent({ children }: PostCardContent) {
   return <div className='flex flex-col flex-1'>{children}</div>;
 }
