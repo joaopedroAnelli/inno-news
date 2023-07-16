@@ -9,7 +9,9 @@ WebPush.setVapidDetails(
 );
 
 export async function POST(req: NextRequest) {
-  const { text } = await req.json();
+  const { data } = await req.json();
+
+  const text = data?.title || 'Novo Post no Blog';
 
   const subscriptions = await prismaClient((prisma) => {
     return prisma.notificationSubscription.findMany({
