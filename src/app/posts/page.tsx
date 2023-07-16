@@ -10,7 +10,7 @@ export default function Home() {
   if (loading) return 'Loading...';
 
   return (
-    <main className='bg-slate-100 flex justify-center h-full flex-col items-center'>
+    <main className='bg-slate-100 flex justify-center h-full flex-col items-center dark:bg-slate-900'>
       {data?.posts.map((post) => (
         <PostCard.Root key={post.id}>
           <PostCard.Cover
