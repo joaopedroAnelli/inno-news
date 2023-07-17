@@ -40,3 +40,15 @@ export async function POST(req: NextRequest) {
 
   return NextResponse.json(subscriptions);
 }
+
+export async function GET() {
+  const subscriptions = await prismaClient((prisma) => {
+    return prisma.notificationSubscription.findMany({
+      include: {
+        keys: true,
+      },
+    });
+  });
+
+  return NextResponse.json(subscriptions);
+}
