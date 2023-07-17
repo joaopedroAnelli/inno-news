@@ -28,7 +28,7 @@ export default function RootLayout({
           </Navbar.Logo>
           <Navbar.Links>
             <Link
-              className='flex items-center hover:bg-cyan-50 hover:text-cyan-800 p-2 rounded-md transition-all'
+              className='flex items-center p-2 rounded-md hover:bg-slate-200 transition-all dark:bg-slate-200 dark:hover:bg-slate-700 dark:text-slate-800 dark:border-slate-700 dark:hover:text-slate-200'
               href='/'
             >
               <HomeIcon className='inline mr-2' style={{ width: 20 }} />
