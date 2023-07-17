@@ -13,8 +13,8 @@ import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/
  * Therefore it is highly recommended to use the babel or swc plugin for production.
  */
 const documents = {
-    "\n  query Post($id: ID!) {\n    post(where: { id: $id }) {\n      title\n      content {\n        html\n      }\n      author {\n        id\n        name\n        picture {\n          url\n        }\n      }\n      coverImage {\n        url\n      }\n    }\n  }\n": types.PostDocument,
-    "\n  query Posts {\n    posts {\n      id\n      title\n      slug\n      stage\n      tags\n      excerpt\n      createdBy {\n        picture\n      }\n      coverImage {\n        url\n      }\n    }\n  }\n": types.PostsDocument,
+    "\n  query Post($id: ID!) {\n    post(where: { id: $id }) {\n      title\n      content {\n        html\n      }\n      author {\n        id\n        name\n        picture {\n          url\n        }\n      }\n      coverImage {\n        url\n      }\n      coverBlurhash\n    }\n  }\n": types.PostDocument,
+    "\n  query Posts {\n    posts {\n      id\n      title\n      slug\n      stage\n      tags\n      excerpt\n      createdBy {\n        picture\n      }\n      coverImage {\n        url\n      }\n      coverBlurhash\n    }\n  }\n": types.PostsDocument,
 };
 
 /**
@@ -34,11 +34,11 @@ export function gql(source: string): unknown;
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function gql(source: "\n  query Post($id: ID!) {\n    post(where: { id: $id }) {\n      title\n      content {\n        html\n      }\n      author {\n        id\n        name\n        picture {\n          url\n        }\n      }\n      coverImage {\n        url\n      }\n    }\n  }\n"): (typeof documents)["\n  query Post($id: ID!) {\n    post(where: { id: $id }) {\n      title\n      content {\n        html\n      }\n      author {\n        id\n        name\n        picture {\n          url\n        }\n      }\n      coverImage {\n        url\n      }\n    }\n  }\n"];
+export function gql(source: "\n  query Post($id: ID!) {\n    post(where: { id: $id }) {\n      title\n      content {\n        html\n      }\n      author {\n        id\n        name\n        picture {\n          url\n        }\n      }\n      coverImage {\n        url\n      }\n      coverBlurhash\n    }\n  }\n"): (typeof documents)["\n  query Post($id: ID!) {\n    post(where: { id: $id }) {\n      title\n      content {\n        html\n      }\n      author {\n        id\n        name\n        picture {\n          url\n        }\n      }\n      coverImage {\n        url\n      }\n      coverBlurhash\n    }\n  }\n"];
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function gql(source: "\n  query Posts {\n    posts {\n      id\n      title\n      slug\n      stage\n      tags\n      excerpt\n      createdBy {\n        picture\n      }\n      coverImage {\n        url\n      }\n    }\n  }\n"): (typeof documents)["\n  query Posts {\n    posts {\n      id\n      title\n      slug\n      stage\n      tags\n      excerpt\n      createdBy {\n        picture\n      }\n      coverImage {\n        url\n      }\n    }\n  }\n"];
+export function gql(source: "\n  query Posts {\n    posts {\n      id\n      title\n      slug\n      stage\n      tags\n      excerpt\n      createdBy {\n        picture\n      }\n      coverImage {\n        url\n      }\n      coverBlurhash\n    }\n  }\n"): (typeof documents)["\n  query Posts {\n    posts {\n      id\n      title\n      slug\n      stage\n      tags\n      excerpt\n      createdBy {\n        picture\n      }\n      coverImage {\n        url\n      }\n      coverBlurhash\n    }\n  }\n"];
 
 export function gql(source: string) {
   return (documents as any)[source] ?? {};

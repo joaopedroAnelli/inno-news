@@ -17,6 +17,7 @@ export default function Home() {
           <PostCard.Cover
             src={post.coverImage?.url || ''}
             alt='Imagem da Notícia'
+            blurDataURL={post.coverBlurhash || ''}
           />
           <PostCard.Content>
             <PostCard.Title>{post.title}</PostCard.Title>

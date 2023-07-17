@@ -15,6 +15,7 @@ export default gql(/* GraphQL */ `
       coverImage {
         url
       }
+      coverBlurhash
     }
   }
 `);
