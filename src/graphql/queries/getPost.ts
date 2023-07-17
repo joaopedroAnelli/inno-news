@@ -17,6 +17,7 @@ const getQuery = gql(/* GraphQL */ `
       coverImage {
         url
       }
+      coverBlurhash
     }
   }
 `);

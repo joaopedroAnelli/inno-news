@@ -3,6 +3,7 @@ import { useQuery } from '@apollo/client';
 
 import getPosts from '@/graphql/queries/getPosts';
 import PostCard from '@/components/PostCard';
+import { EyeIcon } from '@heroicons/react/24/outline';
 
 export default function Home() {
   const { loading, data } = useQuery(getPosts);
@@ -16,11 +17,15 @@ export default function Home() {
           <PostCard.Cover
             src={post.coverImage?.url || ''}
             alt='Imagem da Notícia'
+            blurDataURL={post.coverBlurhash || ''}
           />
           <PostCard.Content>
             <PostCard.Title>{post.title}</PostCard.Title>
             <PostCard.Excerpt>{post.excerpt}</PostCard.Excerpt>
-            <PostCard.CTA href={`/posts/${post.id}`}>Ver Artigo</PostCard.CTA>
+            <PostCard.CTA href={`/posts/${post.id}`}>
+              <EyeIcon className='inline mr-2' style={{ width: 20 }} />
+              Ver Artigo
+            </PostCard.CTA>
           </PostCard.Content>
         </PostCard.Root>
       ))}

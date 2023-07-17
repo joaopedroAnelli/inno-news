@@ -20,6 +20,7 @@ export default function PostPage({ params }: { params: { id: string } }) {
           objectFit='cover'
           className='mb-8'
           fill
+          blurDataURL={data?.post?.coverBlurhash || ''}
           // width={500}
           // height={500}
         />
