@@ -1,34 +1,53 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Inno News
 
-## Getting Started
+Este repositório contém um blog fictício criado como parte de um estudo sobre os conceitos de Service Workers e Web Notifications Push. O objetivo é demonstrar a implementação de notificações push em um projeto Next.js na versão 13.
 
-First, run the development server:
+## Como Rodar o Projeto
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+Para rodar o projeto em sua máquina local, siga as instruções abaixo:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Certifique-se de ter o Node.js instalado em sua máquina.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Clone este repositório usando o comando:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+`$ git clone https://github.com/joaopedroAnelli/inno-news.git`
 
-## Learn More
+Navegue até o diretório do projeto:
 
-To learn more about Next.js, take a look at the following resources:
+`$ cd inno-news`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Instale as dependências do projeto:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+`$ npm install`
 
-## Deploy on Vercel
+Inicie o servidor de desenvolvimento:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+`$ npm run dev`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Funcionamento do Inno News
+
+Este blog fictício possui um back office no Hygraph (Headless CMS com GrapQL Language) onde é possível criar novos posts. Ao criar um novo post, um webhook dispara uma requisição HTTP POST é enviada para a rota /api/notifications, enviando os dados desse novo post. Em seguida, uma notificação é exibida para os usuários que se inscreveram para receber as notificações do blog.
+
+## Contribuição
+
+Contribuições são bem-vindas! Se você deseja contribuir com este projeto, siga as etapas abaixo:
+
+Fork este repositório.
+
+Crie uma branch para sua contribuição:
+
+`$ git checkout -b minha-contribuicao`
+
+Faça as alterações desejadas.
+
+Commit suas alterações:
+
+`$ git commit -m "Minha contribuição"`
+
+Push a branch para o seu repositório fork:
+
+`$ git push origin minha-contribuicao`
+
+Abra um Pull Request neste repositório.
+
+Este projeto foi desenvolvido como parte de um estudo sobre Service Workers e Web Notifications Push. Se você tiver alguma dúvida ou feedback, sinta-se à vontade para entrar em contato.
