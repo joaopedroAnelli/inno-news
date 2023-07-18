@@ -3,5 +3,5 @@ export type NavbarLinksProps = {
 };
 
 export function NavbarLinks({ children }: NavbarLinksProps) {
-  return <div className='m-4'>{children}</div>;
+  return <div className='mx-4 my-2'>{children}</div>;
 }

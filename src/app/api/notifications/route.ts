@@ -21,10 +21,8 @@ export async function POST(req: NextRequest) {
     });
   });
 
-  await Promise.all(
+  Promise.all(
     subscriptions.map((subscription) => {
-      console.log('subscription', subscription);
-
       return WebPush.sendNotification(
         {
           endpoint: subscription.endpoint,

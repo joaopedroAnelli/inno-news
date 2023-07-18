@@ -6,7 +6,7 @@ export type NavbarLogoProps = {
 
 export function NavbarLogo({ children }: NavbarLogoProps) {
   return (
-    <Link href='/' className='my-2 mx-4 flex items-center'>
+    <Link href='/' className='mx-4 my-2 flex items-center'>
       {children}
     </Link>
   );
