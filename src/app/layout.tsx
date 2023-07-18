@@ -3,6 +3,7 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import Link from 'next/link';
+import ServiceWorker from '@/components/ServiceWorker';
 import { HomeIcon } from '@heroicons/react/20/solid';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -20,6 +21,7 @@ export default function RootLayout({
   return (
     <html lang='pt-br'>
       <body className={inter.className}>
+        <ServiceWorker />
         <Navbar.Root>
           <Navbar.Logo>
             <h1>Inno News</h1>
